@@ -43,6 +43,7 @@ describe Phase5::Params do
     it "handles multiple nested keys and values" do
       req.query_string =  "user[fname]=rebecca&user[lname]=smith"
       params = Phase5::Params.new(req)
+      p params
       expect(params["user"]["fname"]).to eq("rebecca")
       expect(params["user"]["lname"]).to eq("smith")
     end
